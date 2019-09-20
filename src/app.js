@@ -3,6 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //define paths for Express config
 const pubDirPath = path.join(__dirname,'../public')
@@ -77,6 +78,6 @@ app.get('/weather', (req, res) => {
     })
 })
 // start server at port 3000 only one time 
-app.listen(3000, () => {
-    console.log('App server is up and running on port 3000')
+app.listen(port, () => {
+    console.log('App server is up and running on port ' + port)
 })
